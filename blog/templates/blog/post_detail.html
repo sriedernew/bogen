@@ -7,7 +7,11 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
+        {% if user.is_authenticated %}
+             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    <img class="alignnone" style="display:inline;margin-left:0;margin-right:0;" src="https://lh3.googleusercontent.com/PPpwMQU6FSFVprKSAR2mknUCBxlZsiHdyqhjuUCDTDj-fO79CyOYulu72Z9SSTcU7KlLXb9EBlpqP3xR5gCrA3tMyoGKT8JoARxjKjtigI3s3OQWM6hwHzHXR2XsvgbrQd7xtId6=w1240-h877-no" alt="" width="300" height="280" scale="0">
 {% endblock %}
