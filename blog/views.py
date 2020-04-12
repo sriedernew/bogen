@@ -9,12 +9,12 @@ from .models import Category
 # Create your views here.
 def post_list(request):
     viewname = 'blog'
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts,'viewname':viewname})
 
 def home_list(request):
     viewname = 'home'
-    posts = Post.objects.filter(category__name='Home').filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(category__name='Home').filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/home_list.html', {'posts': posts,'viewname':viewname})
 
 def post_detail(request, pk):
