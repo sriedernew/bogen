@@ -9,10 +9,7 @@
     </head>
     <body>
     <nav class="navbar navbar-default page-header">
-            {% if user.is_authenticated %}
-               <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            {% endif %}
-            <h1><a href="/">Susanns-Django-Blog</a></h1>
+            <h1 class="home-title"><a href="/">Susanns-Django-Blog</a></h1>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -27,6 +24,9 @@
                         <li  {% if viewname == 'home' %} class="active" {% endif %}><a href="home">Home</a></li>
                         <li {% if viewname == 'gallery' %} class="active" {% endif %}><a href="/">Galerie</a></li>
                         <li {% if viewname == 'kontakt' %} class="active" {% endif %}><a href="kontakt">Kontakt</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span></a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>

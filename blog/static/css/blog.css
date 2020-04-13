@@ -5,10 +5,12 @@
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #22c03c;
-    font-size: 42pt;
+    font-size: 28pt;
     font-weight: bolder;
     font-style: italic;
     text-decoration: none;
+    margin-left: 10px;
+    float: left;
 }
 
 .content {
@@ -37,6 +39,7 @@ h1, h2, h3, h4 {
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    float: left;
 }
 
 .post {
@@ -52,4 +55,8 @@ h1, h2, h3, h4 {
 }
 .f-right {
     float: right;
+}
+.home-title {
+    margin-top:6px;
+    margin-bottom: 0px;
 }
