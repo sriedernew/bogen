@@ -12,7 +12,7 @@
                         <img class="col-xs-5" style="display:inline;" src="{{post.img_url}}" title="{{post.img_alt}}" alt="{{ post.img_alt}}">
                     </div>
                 {% endif %}
-                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|urlize|linebreaksbr }}</p>
             </div>
     {% endfor %}
 {% endblock %}
