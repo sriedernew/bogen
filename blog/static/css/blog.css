@@ -24,6 +24,7 @@ h1, h2, h3, h4 {
 
 .date {
     color: #828282;
+    float: right;
 }
 
 .save {
@@ -48,6 +49,7 @@ h1, h2, h3, h4 {
 
 .post h2, .post h2 a, .post h2 a:visited {
     color: #C25100;
+    font-weight: bolder;
 }
 
 .postimg {
