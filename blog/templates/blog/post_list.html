@@ -13,7 +13,7 @@
                         <img class="col-xs-5" style="display:inline;" src="{{post.img_url}}" title="{{post.img_alt}}" alt="{{ post.img_alt}}">
                     </div>
                 {% endif %}
-                <p>{{ post.text|urlize|linebreaksbr }}</p>
+                <p >{{ post.text|urlize|linebreaksbr|truncatewords:20 }}<a href="{% url 'post_detail' pk=post.pk %}">mehr</a></p>
                 <hr>
             </div>
         {% endif %}

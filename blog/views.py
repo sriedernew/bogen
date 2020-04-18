@@ -18,8 +18,11 @@ def home_list(request):
     return render(request, 'blog/home_list.html', {'posts': posts,'viewname':viewname})
 
 def post_detail(request, pk):
+    codes = False
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    if ("code:" in post.text):
+        codes = post.text.split("--")
+    return render(request, 'blog/post_detail.html', {'post': post, 'codes': codes})
 
 def post_new(request):
     if request.method == "POST":

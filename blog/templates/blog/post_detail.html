@@ -17,6 +17,17 @@
                 <img class="col-xs-6" style="display:inline;" src="{{post.img_url}}" title="{{post.img_alt}}" alt="{{ post.img_alt}}">
             </div>
         {% endif %}
-        <p>{{ post.text|urlize|linebreaksbr }}</p>
+        {% if codes %}
+            {% for c in codes %}
+                {% if "code:" in c %}
+                    <div class="well code">{{c|linebreaksbr}}</div>
+                {% else %}
+                    <p>{{c|urlize|linebreaksbr}}</p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>{{ post.text|urlize|linebreaksbr }}</p>
+        {% endif %}
+        
     </div>
 {% endblock %}
