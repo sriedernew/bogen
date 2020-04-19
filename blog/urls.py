@@ -9,4 +9,5 @@ urlpatterns = [
     path('post/<int:pk>/remove/', views.post_remove, name='post_remove'),
     path('kontakt', views.kontakt, name='kontakt'),
     path('home', views.home_list, name='home_list'),
+    path('accounts/login/', views.forbidden, name='forbidden'),
 ]
