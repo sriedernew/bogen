@@ -3,20 +3,14 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%(wmk89$)3o@pp%ia+ptx4d$_)&^!jl1@we7k(h-xe&lp=78tg'
 
-enviroment = os.environ['VIRTUAL_ENV']
-if 'srieder.pythonanywhere.com' in enviroment:
-   DEBUG = False
-   ALLOWED_HOSTS = ['.pythonanywhere.com']
-else:
-   DEBUG = True
-   ALLOWED_HOSTS = ['127.0.0.1']
+DEBUG = False
+ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
 
 # Application definition
 
