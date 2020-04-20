@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -11,3 +12,4 @@ urlpatterns = [
     path('home', views.home_list, name='home_list'),
     path('accounts/login/', views.forbidden, name='forbidden'),
 ]
+handler404 = 'blog.views.handler404'
