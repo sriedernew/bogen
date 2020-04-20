@@ -1,5 +1,4 @@
 import os
-import socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -14,7 +13,7 @@ SECRET_KEY = '%(wmk89$)3o@pp%ia+ptx4d$_)&^!jl1@we7k(h-xe&lp=78tg'
 enviroment = os.environ['VIRTUAL_ENV']
 if 'srieder.pythonanywhere.com' in enviroment:
    DEBUG = False
-   ALLOWED_HOSTS = ['srieder.pythonanywhere.com']
+   ALLOWED_HOSTS = ['.pythonanywhere.com']
 else:
    DEBUG = True
    ALLOWED_HOSTS = ['127.0.0.1']
