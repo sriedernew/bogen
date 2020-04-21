@@ -11,5 +11,6 @@ urlpatterns = [
     path('kontakt', views.kontakt, name='kontakt'),
     path('home', views.home_list, name='home_list'),
     path('accounts/login/', views.forbidden, name='forbidden'),
+    path('get404', views.get404, name='get404'),
 ]
 handler404 = 'blog.views.handler404'
