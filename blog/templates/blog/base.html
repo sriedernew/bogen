@@ -1,0 +1,50 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+        <link href="//fonts.googleapis.com/css?family=Josefin Sans&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Susanns Django-Blog</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default page-header navbar-fixed-top">
+            <div class="container">
+                <h1 class="home-title"><a href="/" class="brand"><img src="{% static 'images/ufo-logo.png' %}" width="40px" style="vertical-align: bottom;margin-right: 0.5rem;">Sus-Django-Blog</a></h1>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse f-right navbar-collapse" id="bs-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li  {% if viewname == 'home' %} class="active" {% endif %}><a href="/home">Home</a></li>
+                        <li {% if viewname == 'blog' %} class="active" {% endif %}><a href="/">Blog</a></li>
+                        <li {% if viewname == 'gallery' %} class="active" {% endif %}><a href="/">Galerie</a></li>
+                        <li {% if viewname == 'kontakt' %} class="active" {% endif %}><a href="/kontakt">Kontakt</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container theme-showcase content" role="main">
+            <div class="row">
+                <div class="col-md-12">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    </body>
+</html>

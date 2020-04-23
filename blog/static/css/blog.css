@@ -1,0 +1,69 @@
+.page-header {
+    margin: 0;
+    padding: 0;
+}
+.brand {
+    float: left;
+}
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #22c03c;
+    font-size: 26pt;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    margin-left: 0.1rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Josefin Sans';
+}
+
+.date {
+    color: #828282;
+    float: right;
+    margin-right: 3rem;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #4d0f0f;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+    float: left;
+}
+
+.post {
+    margin-bottom: 1rem;
+}
+
+.post h2, .post h2 a, .post h2 a:visited {
+    color: #C25100;
+    font-weight: bolder;
+}
+
+.postimg {
+    margin-bottom: 1rem;
+}
+.f-right {
+    float: right;
+}
+.home-title {
+    margin-top:6px;
+    margin-bottom: 0px;
+    float: left;
+}
+.content {
+    margin-top:60px;
+}
+.code {
+    font-size:110%;
+    font-family: monospace;
+}

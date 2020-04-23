@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        {% if post.category.name == 'Blog' %}
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                {% if post.img_url %}
+                    <div class="row postimg">
+                        <img class="col-xs-5" style="display:inline;" src="{{post.img_url}}" title="{{post.img_alt}}" alt="{{ post.img_alt}}">
+                    </div>
+                {% endif %}
+                <p >{{ post.text|urlize|linebreaksbr|truncatewords:20 }}<a href="{% url 'post_detail' pk=post.pk %}">mehr</a></p>
+                <hr>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

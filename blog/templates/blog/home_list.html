@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+            <div class="post">
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                {% if post.img_url %}
+                    <div class="row postimg">
+                        <img class="col-xs-5" style="display:inline;" src="{{post.img_url}}" title="{{post.img_alt}}" alt="{{ post.img_alt}}">
+                    </div>
+                {% endif %}
+                <p>{{ post.text|urlize|linebreaksbr }}</p>
+            </div>
+    {% endfor %}
+{% endblock %}
