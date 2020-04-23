@@ -20,11 +20,7 @@
         {% if codes %}
             {% for c in codes %}
                 {% if "code:" in c %}
-                    <div class="well code">
-                        <pre>
-                            {{c|linebreaksbr|cut:"<br>code:<br>"}}
-                        </pre>
-                    </div>
+                    <pre class="code">{{c|linebreaksbr|cut:"<br>code:<br>"}}</pre>
                 {% else %}
                     <p>{{c|urlize|linebreaksbr}}</p>
                 {% endif %}
