@@ -4,15 +4,16 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
-from .forms import PostForm
-from .models import Post
-from .models import Category
+from ..forms import PostForm
+from ..models import Post
+from ..models import Category
 
 # Create your views here.
 def post_list(request):
     viewname = 'blog'
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts,'viewname':viewname})
+    entrys = posts.filter(tag__contains = 'Spikzettel')
+    return render(request, 'blog/post_list.html', {'posts': posts,'viewname':viewname,'entrys':entrys,'box_title':'Python-Spikzettel'})
 
 def home_list(request):
     viewname = 'home'
@@ -66,13 +67,3 @@ def kontakt(request):
     post = get_object_or_404(Post, tag__contains = 'Kontakt')
     return render(request, 'blog/post_detail.html', {'post': post,'viewname':viewname})
 
-def forbidden(request):
-    return redirect('post_list')
-
-def handler404(request, exception, template_name="404.html"):
-    response = render_to_response("404.html")
-    response.status_code = 404
-    return response
-
-def get404(request):
-    return render(request, '404.html')

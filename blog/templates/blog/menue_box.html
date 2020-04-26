@@ -1,0 +1,6 @@
+{% extends 'blog/base.html' %}
+{% block box %}
+    {% for entrie in entries %}
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ entrie.title }}</a></h2>
+    {% endfor %}
+{% endblock %}

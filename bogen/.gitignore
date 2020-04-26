@@ -9,8 +9,4 @@ db.sqlite3
 /Lib
 /Scripts
 /Include
-<<<<<<< HEAD
 *.cfg
-=======
-*.cfg
->>>>>>> 278cac72749d0c6f12c873b9c72b4e7aa626290f
