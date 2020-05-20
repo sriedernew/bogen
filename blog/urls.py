@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import post
 from .views import error
+from .views import projekt
 from django.conf.urls import handler404
 
 urlpatterns = [
@@ -13,5 +14,6 @@ urlpatterns = [
     path('home', post.home_list, name='home_list'),
     path('accounts/login/', error.forbidden, name='forbidden'),
     path('get404', error.get404, name='get404'),
+    path('step1', projekt.chart_plot, name='step1'),
 ]
 handler404 = 'blog.views.error.handler404'
