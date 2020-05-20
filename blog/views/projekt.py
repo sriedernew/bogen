@@ -11,6 +11,9 @@ def chart_plot(request):
     plt.close("all")
     for i in range(100):
         werte.append(random.randint(1,49)+i)
+    plt.title("Zufalls Werte zwischen 1 und 49 + i")
+    plt.xlabel('i')
+    plt.ylabel('1-49+i')
     plt.plot(werte,'.')
     fig = plt.gcf()
     #convert graph into dtring buffer and then we convert 64 bit code into image
