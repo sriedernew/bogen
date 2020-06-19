@@ -9,12 +9,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Susanns Django-Blog</title>
+        <title>Django und das Krokodil - ein Pythonblog</title>
     </head>
     <body>
         <nav class="navbar navbar-default page-header navbar-fixed-top">
             <div class="container">
-                <h1 class="home-title"><a href="/" class="brand"><img src="{% static 'images/ufo-logo.png' %}" width="40px" style="vertical-align: bottom;margin-right: 0.5rem;">Sus-Django-Blog</a></h1>
+                <h1 class="home-title"><a href="/" class="brand"><img src="{% static 'images/ufo-logo.png' %}" width="40px" style="vertical-align: bottom;margin-right: 0.5rem;">Django und das Krokodil</a></h1>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -27,7 +27,7 @@
                     <ul class="nav navbar-nav">
                         <li  {% if viewname == 'home' %} class="active" {% endif %}><a href="/home">Home</a></li>
                         <li {% if viewname == 'blog' %} class="active" {% endif %}><a href="/">Blog</a></li>
-                        <li {% if viewname == 'gallery' %} class="active" {% endif %}><a href="/">Galerie</a></li>
+                        <li {% if viewname == 'projekte' %} class="active" {% endif %}><a href="/projekte">Projekte</a></li>
                         <li {% if viewname == 'kontakt' %} class="active" {% endif %}><a href="/kontakt">Kontakt</a></li>
                         {% if user.is_authenticated %}
                             <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span></a></li>

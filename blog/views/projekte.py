@@ -8,9 +8,13 @@ import random
 
 def chart_plot(request):
     werte = []
+    ar_i = []
     plt.close("all")
     for i in range(100):
         werte.append(random.randint(1,49)+i)
+        arr_i.append(i)
+    slope, intercept, r, p, std_err = stats.linregress(werte, arr_i)
+    mymodel = list(map(myfunc, ar_i))
     plt.title("Zufalls Werte zwischen 1 und 49 + i")
     plt.xlabel('i')
     plt.ylabel('1-49+i')
@@ -22,5 +26,8 @@ def chart_plot(request):
     buf.seek(0)
     string = base64.b64encode(buf.read())
     uri =  urllib.parse.quote(string)
-    return render(request,'blog/projekt_step1.html',{'data':uri})
+    return render(request,'blog/projekt.html',{'data':uri})
+
+def myfunc(x):
+    return slope * x + intercept
 

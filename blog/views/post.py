@@ -20,7 +20,19 @@ def home_list(request):
     posts = Post.objects.filter(category__name='Home').filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/home_list.html', {'posts': posts,'viewname':viewname})
 
-def post_detail(request, pk):
+def projekt_list(request):
+    viewname = 'projekte'
+    posts = Post.objects.filter(category__name='Projekt').filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'blog/home_list.html', {'posts': posts,'viewname':viewname})
+
+def post_detail(request, pk, title="ohne"):
+    codes = False
+    post = get_object_or_404(Post, pk=pk)
+    if ("code:" in post.text):
+        codes = post.text.split("--")
+    return render(request, 'blog/post_detail.html', {'post': post, 'codes': codes})
+
+def title_detail(request, pk, title):
     codes = False
     post = get_object_or_404(Post, pk=pk)
     if ("code:" in post.text):
