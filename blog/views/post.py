@@ -22,7 +22,7 @@ def home_list(request):
 
 def projekt_list(request):
     viewname = 'projekte'
-    posts = Post.objects.filter(category__name='Projekt').filter(published_date__lte=timezone.now()).order_by('-published_date')
+    posts = Post.objects.filter(category__name='Projekt').filter(published_date__lte=timezone.now()).order_by('-created_date')
     return render(request, 'blog/home_list.html', {'posts': posts,'viewname':viewname})
 
 def post_detail(request, pk, title="ohne"):
